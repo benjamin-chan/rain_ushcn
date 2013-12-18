@@ -1,0 +1,114 @@
+USHCN daily data are available as ASCII files. 
+The format of each record in an ASCII data file, be it a state-level 
+file (e.g., state01_AL.txt) or the file for the entire U.S. (us.txt) 
+is as follows. (Each record in a file contains one month of daily data.)
+
+Variable 	  	Columns 	  	Type
+COOP ID 	  	1-6 	  	Character
+YEAR	 	  	7-10 	  	Integer
+MONTH 		  	11-12 	  	Integer
+ELEMENT 	  	13-16 	  	Character
+VALUE1 		  	17-21 	  	Integer
+MFLAG1 		  	22 	  	Character
+QFLAG1 		  	23 	  	Character
+SFLAG1 		  	24 	  	Character
+VALUE2 		  	25-29 	  	Integer
+MFLAG2 		  	30 	  	Character
+QFLAG2 		  	31 	  	Character
+SFLAG2 		  	32 	  	Character
+. 	  	. 	  	.
+. 	  	. 	  	.
+. 	  	. 	  	.
+. 	  	. 	  	.
+VALUE31 	  	257-261 	Integer
+MFLAG31 	  	262 	  	Character
+QFLAG31 	  	263 	  	Character
+SFLAG31 	  	264 	  	Character
+
+These variables have the following definitions:
+
+COOP ID 	is the U.S. Cooperative Observer Network station identification
+		code. Note that the first two digits in the Coop Id correspond to the state.
+  	  	 
+YEAR 	  	is the year of the record.
+  	  	 
+MONTH 	  	is the month of the record.
+  	  	 
+ELEMENT   	is the element type. There are five possible values:
+  	  	PRCP = precipitation (hundredths of inches)
+  	  	SNOW = snowfall (tenths of inches)
+  	  	SNWD = snow depth (inches)
+  	  	TMAX = maximum temperature (degrees F)
+  	  	TMIN = minimum temperature (degrees F)
+
+VALUE1 	  	is the value on the first day of the month (missing = -9999).
+  	  	 
+MFLAG1 	  	is the measurement flag for the first day of the month. There are five possible values:
+  	  	Blank = no measurement information applicable
+  	  	B = precipitation total formed from two 12-hour totals
+  	  	D = precipitation total formed from four six-hour totals
+  	  	L = temperature appears to be lagged with respect to reported hour of observation
+  	  	T = trace of precipitation, snowfall, or snow depth
+  	  	 
+QFLAG1 	  	is the quality flag for the first day of the month. There are fourteen possible values:
+  	  	Blank = did not fail any quality assurance check
+  	  	A = failed accumulation total check
+  	  	D = failed duplicate check
+  	  	G = failed gap check
+  	  	I = failed internal consistency check
+  	  	K = failed streak/frequent-value check
+  	  	M = failed megaconsistency check
+  	  	N = failed naught check
+  	  	O = failed climatological outlier check
+  	  	R = failed lagged range check
+  	  	S = failed spatial consistency check
+  	  	T = failed temporal consistency check
+  	  	W = temperature too warm for snow
+  	  	X = failed bounds check
+
+SFLAG1          is the source flag for the first day of the month.  There are 
+                sixteen possible values (including blank):
+
+                Blank = No source (i.e., data value missing)
+                0     = U.S. Cooperative Summary of the Day (NCDC DSI-3200)
+                1     = U.S. Preliminary Cooperative Summary of the 
+                        Day -- Transmitted 
+                2     = U.S. Preliminary Cooperative Summary of the 
+                        Day -- Keyed from paper forms
+                6     = CDMP Cooperative Summary of the Day (NCDC DSI-3206)
+                A     = U.S. Automated Surface Observing System (ASOS) 
+                        real-time data (since January 1, 2006)
+                B     = U.S. ASOS data for October 2000-December 2005 (NCDC 
+                        DSI-3211)
+                F     = U.S. Fort data 
+                G     = Official Global Climate Observing System (GCOS) or 
+                        other government-supplied data
+                H     = High Plains Regional Climate Center real-time data
+                I     = International collection (non U.S. data received through
+	                personal contacts)
+                M     = Monthly METAR Extract (additional ASOS data)
+	        Q     = Data from several African countries that had been 
+	                "quarantined", that is, withheld from public release
+		        until permission was granted from the respective 
+	                meteorological services
+                R     = NCDC Reference Network Database (Climate Reference Network
+	                and Historical Climatology Network-Modernized)
+                S     = Global Summary of the Day (NCDC DSI-9618)
+                        NOTE: "S" values are derived from hourly synoptic reports
+                        exchanged on the Global Telecommunications System (GTS).
+                        Daily values derived in this fashion may differ
+                        significantly from "true" daily data, particularly for precipitation
+                        (i.e., use with caution).
+                X     = U.S. First-Order Summary of the Day (NCDC DSI-3210)
+
+VALUE2          is the value on the second day of the month
+
+MFLAG2          is the measurement flag for the second day of the month.
+
+QFLAG2          is the quality flag for the second day of the month.
+
+SFLAG2          is the source flag for the second day of the month.
+
+... and so on through the 31st day of the month.  Note: If the month has less 
+than 31 days, then the remaining variables are set to missing (e.g., for
+April, VALUE31 = -9999, MFLAG31 = blank, QFLAG31 = blank, SFLAG31 = blank).

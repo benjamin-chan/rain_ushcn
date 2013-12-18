@@ -1,0 +1,98 @@
+The format of each record in the USHCN Daily station inventory file 
+(ushcn-stations.txt) is as follows.
+
+Variable 	  	Columns 	  	Type
+COOP ID 	  	1-6 	  	Character
+LATITUDE 	  	8-15 	  	Real
+LONGITUDE 	  	17-25 	  	Real
+ELEVATION 	  	27-32 	  	Real
+STATE	 	  	34-35 	  	Character
+NAME 		  	37-66 	  	Character
+COMPONENT 1 	  	68-73 	  	Character
+COMPONENT 2 	  	75-80 	  	Character
+COMPONENT 3 	  	82-87 	  	Character
+UTC OFFSET 	  	89-90 	  	Integer
+
+These variables have the following definitions:
+
+COOP ID   	is the U.S. Cooperative Observer Network station identification 
+		code. Note that the first two digits in the Coop ID 
+		correspond to the assigned state number (see table below).
+  	  	 
+LATITUDE	is latitude of the station (in decimal degrees).
+  	  	 
+LONGITUDE   	is the longitude of the station (in decimal degrees).
+  	  	 
+ELEVATION   	is the elevation of the station (in meters, missing = -999.9).
+  	  	 
+STATE 	  	is the U.S. postal code for the state.
+  	  	 
+NAME 	  	is the name of the station location.
+  	  	 
+COMPONENT 1   	is the Coop Id for the first station (in chronologic order) 
+                whose records were joined with those of the HCN site to 
+		form a longer time series. "------" indicates "not applicable".
+  	  	 
+COMPONENT 2   	is the Coop Id for the second station (if applicable) whose records were 
+		joined with those of the HCN site to form a longer time series.
+  	  	 
+COMPONENT 3   	is the Coop Id for the third station (if applicable) whose records were 
+		joined with those of the HCN site to form a longer time series.
+  	  	 
+UTC OFFSET   	is the time difference between Coordinated Universal Time (UTC) and 
+		local standard time at the station (i.e., the number of hours 
+		that must be added to local standard time to match UTC).
+
+
+   	
+State  	  	State  	  	State
+Number	 	Code	
+
+01 	  	AL 	  	Alabama
+02 	  	AZ 	 	Arizona
+03 	  	AR 	  	Arkansas
+04 	  	CA 	  	California
+05 	  	CO 	  	Colorado
+06 	  	CT 	  	Connecticut
+07 	  	DE 	  	Delaware
+08 	  	FL 	  	Florida
+09 	  	GA 	  	Georgia
+10 	  	ID 	  	Idaho
+11 	  	IL 	  	Idaho
+12 	  	IN 	  	Indiana
+13 	  	IA 	  	Iowa
+14 	  	KS 	  	Kansas
+15 	  	KY 	  	Kentucky
+16 	  	LA 	  	Louisiana
+17 	  	ME 	  	Maine
+18 	  	MD 	  	Maryland
+19 	  	MA 	  	Massachusetts
+20 	  	MI 	  	Michigan
+21 	  	MN 	  	Minnesota
+22 	  	MS 	  	Mississippi
+23 	  	MO 	  	Missouri
+24 	  	MT 	  	Montana
+25 	  	NE 	  	Nebraska
+26 	  	NV 	  	Nevada
+27 	  	NH 	  	New Hampshire
+28 	  	NJ 	  	New Jersey
+29 	  	NM 	  	New Mexico
+30 	  	NY 	  	New York
+31 	  	NC 	  	North Carolina
+32 	  	ND 	  	North Dakota
+33 	  	OH 	  	Ohio
+34 	  	OK 	  	Oklahoma
+35 	  	OR 	  	Oregon
+36 	  	PA 	  	Pennsylvania
+37 	  	RI 	  	Rhode Island
+38 	  	SC 	  	South Carolina
+39 	  	SD 	  	South Dakota
+40 	  	TN 	  	Tennessee
+41 	  	TX 	  	Texas
+42 	  	UT 	  	Utah
+43 	  	VT 	  	Vermont
+44 	  	VA 	  	Virginia
+45 	  	WA 	  	Washington
+46 	  	WV 	  	West Virginia
+47 	  	WI 	  	Wisconsin
+48 	  	WY 	  	Wyoming
